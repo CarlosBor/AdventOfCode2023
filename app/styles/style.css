@@ -1,0 +1,38 @@
+.bodyWrapper{
+    display:flex;
+}
+
+p{
+    margin-bottom:0.2em;
+}
+
+textarea{
+    width:360px;
+    height:200px;
+}
+
+.textWrapper{
+    margin:35px;
+}
+
+.codeWrapper{
+    height:100vh;
+    overflow-y:scroll;
+}
+
+.link{
+    text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+    color:#00cc00;
+}
+
+ol{
+    margin-bottom:0.5em;
+}
+
+h3{
+    text-decoration: none;
+    color: #00cc00;
+    text-shadow: 0 0 1px #00cc00, 0 0 5px #00cc00;
+    font-family:monospace;
+    font-size:30px;
+}

@@ -1,4 +1,8 @@
 import fs from 'fs';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
+import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import '../../styles/style.css';
+import Link from 'next/link';
 
 const Ejercicio = () =>{
     // Path to your text file
@@ -32,12 +36,33 @@ const Ejercicio = () =>{
         sum2 = sum2 + number2;
     }
     let result2 = sum2;
+
+    /***********************************************/
+    /*******************Output**********************/
+    /***********************************************/
     return(<>
-        <p>La solucion a la primera version es: {result}</p>
-        <p>La solucion a la segunda version es: {result2}</p>
-        <code>This is some code</code>
+        <div className="bodyWrapper">
+            <div className="textWrapper">
+                <h3>Advent of Code 2023</h3>
+                <Link href='https://adventofcode.com/2023/day/1' className="link">Link a prueba original =&gt;</Link>
+                <ol>
+                    <li>Dado un texto, formar un número de dos dígitos con el primer y el último números de cada línea. Responder con la suma total de esos números.</li>
+                    <li>Sobre el mismo texto, tener ahora en cuenta números escritos con letras tales como &apos;eight&apos; o &apos;five&apos;</li>
+                </ol>
+                <p>La solución a la primera version es: {result}</p>
+                <p>La solución a la segunda version es: {result2}</p>
+                <p>Con este input:</p>
+                <textarea value={content}/>
+            </div>
+            <div className="codeWrapper">
+                <SyntaxHighlighter language="javascript" style={tomorrowNightEighties}>
+                    {otherContent}
+                </SyntaxHighlighter>
+            </div>
+        </div>
     </>)
 }
+
 
 const findFirstDigit = (text) =>{
     const numbers = ['0','1','2','3','4','5','6','7','8','9'];
@@ -137,7 +162,6 @@ const findFirstWord = (text) =>{
     }else{
         secondNumber = secondDigitAndPosition.number;
     }
-
     return parseInt(firstNumber+secondNumber);
 }
 
