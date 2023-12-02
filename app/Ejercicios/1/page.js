@@ -52,7 +52,7 @@ const Ejercicio = () =>{
                 <p>La solución a la primera version es: {result}</p>
                 <p>La solución a la segunda version es: {result2}</p>
                 <p>Con este input:</p>
-                <textarea value={content}/>
+                <textarea readonly value={content}/>
             </div>
             <div className="codeWrapper">
                 <SyntaxHighlighter language="javascript" style={tomorrowNightEighties}>
